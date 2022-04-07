@@ -14,10 +14,18 @@
 </head>
 <body>
     <h1>Welcome to gitPub</h1>
+
+    <% function capitalize(str) {
+        let wordList = str.split(" ");
+        wordList.forEach(function(word, i) {
+          wordList[i] = word[0].toUpperCase() + word.substring(1);
+        })
+        return wordList.join(' ');
+      } %> 
     <ul>
         <% for(let i = 0; i < allDrinks.length; i++) { %>
         <li>
-          <a href="/drinks/<%=i%>"><%=allDrinks[i].name %></a>
+          <a href="/drinks/<%=i%>"><%=capitalize(allDrinks[i].name) %></a>
         </li>
         <% } %>
       </ul>

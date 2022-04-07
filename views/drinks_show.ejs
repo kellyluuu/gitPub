@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show</title>
+    <title>Drink</title>
 </head>
 <body>
+    <% function capitalize(str) {
+        let wordList = str.split(" ");
+        wordList.forEach(function(word, i) {
+          wordList[i] = word[0].toUpperCase() + word.substring(1);
+        })
+        return wordList.join(' ');
+      }
+        %> 
+    <h1>Drinks show page</h1>
+    <h2><%= capitalize(drink.name) %> </h2>
+    <h3>Cost: $<%= drink.price %></h3>
+    <img src="<%= drink.image %> " width="300px" alt="">
+
+    <br>
+    <br>
+
+<a href="/drinks">Back to Index</a>
     
 </body>
 </html>
